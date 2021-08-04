@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width" />
+<title>2xh's Github site</title>
+</head>
+<body style="text-align:center">
+<h1>Welcome here!</h1><p>The site is very basic now. <a href="https://github.com/2xh/2xh.github.io/issues" style="font-weight:bold">Give suggestions</a></p>
+<form id="show" action="javascript:var output=document.getElementById('output');new Function(document.getElementById('show').elements[0].value)()">
+<select name="function" required>
+<option value="">Choose what you want to show</option>
+<option value="navigator.geolocation?output.innerHTML='Getting your location...':output.innerHTML='Your browser is unsupported';navigator.geolocation.getCurrentPosition(function(pos){output.innerHTML='Linear unit: m Angular unit: °<br>';for(var name in pos.coords)if(pos.coords[name]!==null)output.innerHTML+=name+': '+pos.coords[name]+'<br>'},function(err){const type=['Permission denied','Position unavailable','Timeout'];output.innerHTML=type[err.code-1]})">Show location</option>
+<option value="output.innerHTML=navigator.userAgent">Show User Agent (UA)</option>
+</select>
+<input type="submit"><input type="reset" onclick="output.innerHTML=null">
+</form>
+<div id="output"></div>
+<!-- <div style="position:fixed;bottom:0;width:100%"></div> -->
+</body>
+</html>
